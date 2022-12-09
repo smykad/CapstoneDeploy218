@@ -1,0 +1,42 @@
+﻿@model IEnumerable<TermProjectX.Models.ThreatLevel>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1 class="text-center">Threat Level</h1>
+<br />
+<br />
+@*CARD DECK*@
+<div class="card-deck justify-content-center">
+    @foreach (var item in Model)
+    {
+
+        @*CARD*@
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+
+            @*CARD HEADER*@
+            <div class="card-header text-center"><a asp-action="Details" asp-route-id="@item.ThreatLevelId"
+                class="text-white">@Html.DisplayFor(modelItem => item.Name)</a></div>
+
+            @*CARD BODY*@
+            <div class="card-body bg-dark">
+
+                @*CARD BUTTONS*@
+                <div class="form-group justify-content-center">
+                    <a asp-action="Edit" asp-route-id="@item.ThreatLevelId" class="btn btn-success">Edit</a>
+
+                    <a asp-action="Delete" asp-route-id="@item.ThreatLevelId" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<br />
+<br />
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <a asp-action="Create" class="btn btn-primary">Create New</a>
+        </div>
+    </div>
+</div>

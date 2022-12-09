@@ -1,0 +1,23 @@
+﻿@model TermProjectX.Models.SCP
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card bg-info" style="max-width: 78rem;">
+    <div class="card-header bg-info">
+        <h4>@Html.DisplayFor(model => model.Name)</h4>
+    </div>
+    <div class="card-body bg-dark">
+        <h5 class="card-title">@Html.DisplayName("Threat Level: ")@Html.DisplayFor(model => model.ThreatLevel.Name)</h5>
+        <h5 class="card-title">@Html.DisplayName("Object Class: ") @Html.DisplayFor(model => model.ObjectClass.Name)</h5>
+        <h5 class="card-title">@Html.DisplayNameFor(model => model.Containment): @Html.DisplayFor(model => model.Containment)</h5>
+        <p class="card-text" style="display:inline;"><h5>@Html.DisplayName("Description: ")</h5>@Html.DisplayFor(model => model.Description)</p>
+    </div>
+    <div class="card-footer bg-dark">
+        <div class="form-group">
+            <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-primary">Edit</a> 
+            <a asp-action="Index" class="btn btn-success">Back</a>
+        </div>
+    </div>
+</div>
