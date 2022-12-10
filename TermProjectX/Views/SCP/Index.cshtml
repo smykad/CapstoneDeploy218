@@ -50,24 +50,24 @@
 <div class="container">
     <br /><br />
     <ul class="pagination justify-content-center">
-<li class="page-item">
+<li class="page-item @prevDisabled">
 <a asp-action="Index"
    asp-route-sortOrder="@ViewData["CurrentSort"]"
    asp-route-pageNumber="@(Model.PageIndex - 1)"
    asp-route-currentFilter="@ViewData["CurrentFilter"]"
-   class="page-link text-white bg-primary @prevDisabled">
+   class="page-link text-white bg-primary ">
     Previous
 </a>
 </li>
         <li class="page-item">
             <a asp-action="Create" class="page-link text-white bg-primary">Create New</a>
         </li>
-<li class="page-item">
+<li class="page-item @nextDisabled">
 <a asp-action="Index"
    asp-route-sortOrder="@ViewData["CurrentSort"]"
    asp-route-pageNumber="@(Model.PageIndex + 1)"
    asp-route-currentFilter="@ViewData["CurrentFilter"]"
-               class="page-link text-white bg-primary @nextDisabled">
+    class="page-link text-white bg-primary ">
     Next
 </a>
 </li>
